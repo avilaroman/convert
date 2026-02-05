@@ -118,6 +118,8 @@ class FFmpegHandler implements FormatHandler {
       const description = parts.slice(2).join(" ");
       const formats = parts[1].split(",");
 
+      if (description.startsWith("piped ")) continue;
+
       for (const format of formats) {
 
         let primaryFormat = formats[0];
